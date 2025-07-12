@@ -1,76 +1,388 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html>
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yash Dudeja | AI Engineer Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>Yash Dudeja | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
+    html {
+      scroll-behavior: smooth;
     }
   </style>
+  <style>
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  @keyframes blob {
+    0%, 100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+</style>
 </head>
 
-<body class="bg-gray-100 text-gray-800">
-  <!-- Hero -->
-  <section class="bg-white shadow p-10 text-center">
-    <h1 class="text-4xl font-extrabold text-gray-900">Yash Dudeja</h1>
-    <p class="text-xl mt-2 text-gray-600">AI Engineer | GenAI Developer | ML + Graph + LLMs</p>
-    <div class="mt-4 flex justify-center space-x-4">
-      <a href="https://github.com/Yash-bot" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">GitHub</a>
-      <a href="https://www.linkedin.com/in/yash-dudeja-286a1119b/" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500">LinkedIn</a>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white relative">
+
+  <!-- Particles background -->
+  <div id="tsparticles" class="absolute inset-0 -z-10"></div>
+
+  <header class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-800 shadow">
+  <div class="max-w-7xl mx-auto px-6 md:px-14 py-4 flex items-center justify-between">
+    <h1 class="text-xl md:text-2xl font-bold text-gray-800 dark:text-white">
+      Yash Dudeja
+    </h1>
+    <nav class="hidden md:flex gap-6 text-gray-700 dark:text-gray-300 text-sm font-medium">
+      <a href="#home" class="hover:text-yellow-500 transition">Home</a>
+      <a href="#about" class="hover:text-yellow-500 transition">About</a>
+      <a href="#projects" class="hover:text-yellow-500 transition">Projects</a>
+      <a href="#skills" class="hover:text-yellow-500 transition">Skills</a>
+      <a href="#contact" class="hover:text-yellow-500 transition">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  <!-- Hero Section with Animated Blob Background -->
+<section id="home" class="relative h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900 overflow-hidden pt-24">
+
+  <!-- Animated Background Blobs -->
+  <div class="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
+    <div class="absolute w-96 h-96 bg-blue-500 opacity-30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+    <div class="absolute top-20 left-60 w-96 h-96 bg-purple-500 opacity-30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+    <div class="absolute top-40 left-1/3 w-96 h-96 bg-pink-500 opacity-30 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="relative z-10 max-w-6xl w-full px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <div data-aos="fade-right">
+      <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">
+        Hi, I'm <span class="text-blue-300">Yash</span>
+      </h1>
+      <h2 class="text-xl sm:text-2xl font-medium text-blue-100 mb-6">
+        <span id="typed-role"></span>
+      </h2>
+      <p class="text-blue-200 leading-relaxed mb-6">
+        I work at the intersection of data science and software engineering — building intelligent systems using Machine Learning, NLP, and LLMs.
+      </p>
+      <a href="#projects" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">🚀 View My Work</a>
     </div>
-  </section>
+    <div data-aos="fade-left" class="flex justify-center">
+      <img src="./assets/profile.jpg" alt="Yash Dudeja" class="w-64 h-66 rounded-2xl object-cover border-4 border-blue-300 shadow-xl" />
+    </div>
+  </div>
+</section>
 
-  <!-- About -->
-  <section class="max-w-3xl mx-auto py-12 px-6">
-    <h2 class="text-2xl font-semibold mb-4">About Me</h2>
-    <p class="text-gray-700 leading-relaxed">
-      I'm a Data Scientist and AI Developer with a passion for building GenAI systems using LLMs, vector databases, and graph technology. I recently built a Knowledge Graph Q&A system that uses Groq, Qdrant, Neo4j, and PostgreSQL to answer queries from documents.
+  <!-- About Section with Improved Particle Background -->
+<section id="about" class="relative py-20 px-6 bg-gradient-to-r from-blue-900 to-black text-white overflow-hidden">
+  <!-- Particle container -->
+  <div id="particles-about" class="absolute inset-0 z-0 pointer-events-none"></div>
+
+  <!-- Main content -->
+  <div class="relative z-10 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6">About Me</h2>
+    <p class="mb-4">
+      Hey! I’m <strong>Yash Dudeja</strong>, a 26-year-old developer driven by curiosity and a passion for solving real-world problems through technology. My journey started with a fascination for how machines learn and evolved into a full-fledged pursuit of data-driven systems, artificial intelligence, and impactful software development.
     </p>
-  </section>
+    <p class="mb-4">
+      I hold a <strong>BSc in Information Technology</strong> and an <strong>MSc in Data Science</strong>, during which I honed my understanding of machine learning, deep learning, and cloud technologies. I genuinely enjoy diving deep into how things work under the hood — from neural networks to distributed systems — and translating that knowledge into tangible, efficient solutions.
+    </p>
+    <p class="mb-4">
+      Professionally, I’ve worked at <strong>Capgemini</strong> for over 2 years as a Cloud Developer, where I focused on scalable backend solutions. I’ve also explored cutting-edge domains like Computer Vision during my internship with <strong>Snapworks (HDFC)</strong>, and applied practical data science workflows during my time at <strong>Millipixels Interactive</strong>. These experiences have shaped my belief that good tech is both user-focused and robust under the hood.
+    </p>
+    <p class="mb-4">
+      Beyond tech, I’ve always thrived in collaborative and leadership environments. I’ve been a <strong>School Sports Captain</strong>, led as the <strong>Fest Design Head</strong>, and contributed as a <strong>Cultural Core Team Member</strong>. I was honored with the title of <strong>Best Outgoing Student</strong> — a testament to my balance of academics, creativity, and team spirit.
+    </p>
+    <p class="mb-4">
+      Outside the screen, I’m someone who recharges through <strong>outdoor sports</strong>, painting, dancing, and occasional treks. I believe that creativity off-screen fuels innovation on-screen.
+    </p>
+    <p>
+      Currently, I’m focused on building intelligent systems that can learn, adapt, and scale. I'm also exploring MLOps, GenAI applications, and system design — and I'm always excited to collaborate on meaningful, future-ready tech.
+    </p>
+    <!-- Resume Download -->
+    <div class="text-center mt-8">
+      <a href="./assets/resume.pdf" download class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+        Click here for My Resume
+      </a>
+    </div>
+  </div>
+</section>
 
-  <!-- Projects -->
-  <section class="bg-white py-12 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-semibold mb-6">Projects</h2>
-      <div class="bg-gray-50 p-6 rounded-lg shadow">
-        <h3 class="text-xl font-bold mb-2">📄 AI-Powered PDF Q&A System</h3>
-        <p class="mb-2 text-gray-700">Built an intelligent document query engine using:</p>
-        <ul class="list-disc pl-6 text-gray-700">
-          <li>Groq LLM for fast natural language responses</li>
-          <li>Chunked document storage in Qdrant (vector), Neo4j (graph), PostgreSQL (structured)</li>
-          <li>Backend APIs with FastAPI</li>
-          <li>RAG architecture using LangChain and custom logic</li>
-        </ul>
-        <a href="https://github.com/YOUR_USERNAME/pdf-rag-system" class="text-blue-600 hover:underline mt-3 inline-block">View on GitHub →</a>
+<!-- tsParticles Script -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+<script>
+  window.addEventListener('load', () => {
+    tsParticles.load("particles-about", {
+      fullScreen: false,
+      background: {
+        color: "transparent"
+      },
+      particles: {
+        number: { value: 60 },
+        color: { value: ["#00ffff", "#00ff88", "#ffffff"] },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: { min: 2, max: 4 } },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          outModes: { default: "bounce" }
+        }
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "repulse" },
+          resize: true
+        },
+        modes: {
+          repulse: { distance: 100 }
+        }
+      }
+    });
+  });
+</script>
+
+
+<!-- Projects Section with Animated Background -->
+<section id="projects" class="relative py-20 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
+  <!-- Particle container -->
+  <div id="particles-projects" class="absolute inset-0 z-0"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white/10 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Smart Log Analyzer</h3>
+        <p class="text-sm mb-4">Categorizes and summarizes event logs using LLMs and vector search with FastAPI.</p>
+        <div class="flex flex-wrap gap-2 text-xs text-blue-400 mb-4">
+          <span>#FastAPI</span><span>#LLM</span><span>#Kafka</span>
+        </div>
+        <div class="flex justify-between">
+          <a href="#" class="text-blue-400 hover:underline">GitHub</a>
+          <a href="#" class="text-blue-400 hover:underline">Live</a>
+        </div>
+      </div>
+
+      <div class="bg-white/10 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Cross-Browser Testing</h3>
+        <p class="text-sm mb-4">Platform for visual/performance testing using Selenium and OpenCV.</p>
+        <div class="flex flex-wrap gap-2 text-xs text-blue-400 mb-4">
+          <span>#Selenium</span><span>#OpenCV</span>
+        </div>
+        <div class="flex justify-between">
+          <a href="#" class="text-blue-400 hover:underline">GitHub</a>
+          <a href="#" class="text-blue-400 hover:underline">Live</a>
+        </div>
+      </div>
+
+      <div class="bg-white/10 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Policy RAG Bot</h3>
+        <p class="text-sm mb-4">A chatbot that uses RAG + ChromaDB to answer document-based queries.</p>
+        <div class="flex flex-wrap gap-2 text-xs text-blue-400 mb-4">
+          <span>#RAG</span><span>#ChromaDB</span><span>#LLMs</span>
+        </div>
+        <div class="flex justify-between">
+          <a href="#" class="text-blue-400 hover:underline">GitHub</a>
+          <a href="#" class="text-blue-400 hover:underline">Live</a>
+        </div>
+      </div>
+
+      <div class="bg-white/10 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Automatic Ticket Generation</h3>
+        <p class="text-sm mb-4">Automated issue tracking system using Mistral AI, Streamlit, and PostgreSQL.</p>
+        <div class="flex flex-wrap gap-2 text-xs text-blue-400 mb-4">
+          <span>#Mistral</span><span>#PostgreSQL</span><span>#Streamlit</span>
+        </div>
+      </div>
+
+      <div class="bg-white/10 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Anomaly Detection</h3>
+        <p class="text-sm mb-4">Fraud detection on Ethereum using Isolation Forest and DBSCAN.</p>
+        <div class="flex flex-wrap gap-2 text-xs text-blue-400 mb-4">
+          <span>#Ethereum</span><span>#IsolationForest</span><span>#DBSCAN</span>
+        </div>
+      </div>
+
+      <div class="bg-white/10 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Sentiment Analysis with BERT</h3>
+        <p class="text-sm mb-4">Built a PyTorch-based sentiment classifier using BERT for customer feedback.</p>
+        <div class="flex flex-wrap gap-2 text-xs text-blue-400 mb-4">
+          <span>#BERT</span><span>#NLP</span><span>#PyTorch</span>
+        </div>
+      </div>
+
+      <div class="bg-white/10 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Cheque Data Extraction</h3>
+        <p class="text-sm mb-4">Built a CV model that reads cheque images and auto-fills corresponding data fields.</p>
+        <div class="flex flex-wrap gap-2 text-xs text-blue-400 mb-4">
+          <span>#ComputerVision</span><span>#OCR</span><span>#ImageProcessing</span>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Tech Stack -->
-  <section class="max-w-4xl mx-auto py-12 px-6">
-    <h2 class="text-2xl font-semibold mb-4">Tech Stack</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-      <div class="bg-gray-200 p-4 rounded">Python</div>
-      <div class="bg-gray-200 p-4 rounded">FastAPI</div>
-      <div class="bg-gray-200 p-4 rounded">LangChain</div>
-      <div class="bg-gray-200 p-4 rounded">Groq API</div>
-      <div class="bg-gray-200 p-4 rounded">Qdrant</div>
-      <div class="bg-gray-200 p-4 rounded">Neo4j</div>
-      <div class="bg-gray-200 p-4 rounded">PostgreSQL</div>
-      <div class="bg-gray-200 p-4 rounded">Docker</div>
+<!-- tsparticles script -->
+<script>
+  window.addEventListener('load', () => {
+    tsParticles.load("particles-projects", {
+      fullScreen: false,
+      background: {
+        color: "transparent"
+      },
+      particles: {
+        number: { value: 35 },
+        color: { value: ["#38bdf8", "#a78bfa", "#f472b6"] },
+        shape: { type: "circle" },
+        opacity: { value: 0.2 },
+        size: { value: 3 },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "none",
+          outMode: "bounce"
+        }
+      },
+      interactivity: {
+        events: {
+          onHover: {
+            enable: true,
+            mode: "repulse"
+          }
+        }
+      }
+    });
+  });
+</script>
+
+
+<section id="skills" class="py-20 bg-gradient-to-br from-gray-900 to-gray-950 text-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-extrabold text-center mb-16 tracking-tight">My Tech Stack</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Interests -->
+      <div class="bg-gray-800/60 rounded-2xl p-6 backdrop-blur border border-blue-600/30 shadow-xl hover:shadow-blue-700/40 transition">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center gap-2">🎯 Worked On</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="skill-pill">Neural Networks |</span>
+          <span class="skill-pill">Machine Learning |</span>
+          <span class="skill-pill">NLP |</span>
+          <span class="skill-pill">Deep Learning |</span>
+          <span class="skill-pill">Generative AI |</span>
+          <span class="skill-pill">Computer Vision |</span>
+        </div>
+      </div>
+
+      <!-- Frameworks -->
+      <div class="bg-gray-800/60 rounded-2xl p-6 backdrop-blur border border-green-600/30 shadow-xl hover:shadow-green-700/40 transition">
+        <h3 class="text-lg font-semibold text-green-400 mb-4 flex items-center gap-2">🧰 Frameworks & Tools</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="skill-pill">FastAPI |</span>
+          <span class="skill-pill">LangChain |</span>
+          <span class="skill-pill">OpenAI |</span>
+          <span class="skill-pill">HuggingFace |</span>
+          <span class="skill-pill">Streamlit |</span>
+          <span class="skill-pill">Docker |</span>
+          <span class="skill-pill">AWS |</span>
+          <span class="skill-pill">Git |</span>
+        </div>
+      </div>
+
+      <!-- Databases -->
+      <div class="bg-gray-800/60 rounded-2xl p-6 backdrop-blur border border-purple-600/30 shadow-xl hover:shadow-purple-700/40 transition">
+        <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center gap-2">📦 Databases</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="skill-pill">PostgreSQL |</span>
+          <span class="skill-pill">MongoDB |</span>
+          <span class="skill-pill">Neo4j |</span>
+          <span class="skill-pill">NoSQL |</span>
+          <span class="skill-pill">SQL |</span>
+        </div>
+      </div>
+
+      <!-- Libraries -->
+      <div class="bg-gray-800/60 rounded-2xl p-6 backdrop-blur border border-pink-600/30 shadow-xl hover:shadow-pink-700/40 transition">
+        <h3 class="text-lg font-semibold text-pink-400 mb-4 flex items-center gap-2">📚 Libraries & Visualization</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="skill-pill">Pandas |</span>
+          <span class="skill-pill">NumPy |</span>
+          <span class="skill-pill">Scikit-learn |</span>
+          <span class="skill-pill">TensorFlow |</span>
+          <span class="skill-pill">PyTorch |</span>
+          <span class="skill-pill">Playwright |</span>
+          <span class="skill-pill">OpenCV |</span>
+          <span class="skill-pill">Matplotlib |</span>
+          <span class="skill-pill">Seaborn |</span>
+          <span class="skill-pill">Plotly |</span>
+          <span class="skill-pill">Whisper |</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-800 text-center">
+    <h2 class="text-3xl font-bold mb-10">Contact Me</h2>
+    <form class="max-w-xl mx-auto space-y-6" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-2 border rounded-lg" />
+      <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-2 border rounded-lg" />
+      <textarea name="message" rows="5" placeholder="Your Message" required class="w-full px-4 py-2 border rounded-lg"></textarea>
+      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Send Message</button>
+    </form>
+    <div class="mt-10 flex justify-center gap-6">
+      <a href="https://github.com/yash-bot" class="text-xl text-gray-700 dark:text-gray-300 hover:text-blue-500"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://linkedin.com/in/your-profile" class="text-xl text-gray-700 dark:text-gray-300 hover:text-blue-500"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="mailto:yash@example.com" class="text-xl text-gray-700 dark:text-gray-300 hover:text-blue-500"><i class="fas fa-envelope"></i> Email</a>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="text-center py-6 text-gray-500">
-    &copy; 2025 Yash Dudeja. Built with ❤️ and TailwindCSS.
-  </footer>
+  <!-- Scripts -->
+  <script>
+    new Typed("#typed-role", {
+      strings: ["Data Scientist", "ML Engineer", "LLM Practitioner", "Cloud Developer", "AI Enthusiast"],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 1500,
+      loop: true
+    });
+
+    tsParticles.load("tsparticles", {
+      background: { color: { value: "#f9fafb" } },
+      fpsLimit: 60,
+      particles: {
+        number: { value: 40, density: { enable: true, value_area: 800 } },
+        color: { value: "#60a5fa" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        move: { enable: true, speed: 1 }
+      }
+    });
+
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+  </script>
+
 </body>
 </html>
